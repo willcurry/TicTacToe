@@ -31,4 +31,26 @@ public class GameTests {
         board.mark(6, 'x');
         assertTrue(game.hasWinner());
     }
+
+    @Test
+    public void knowsWhenALeftDiagonalWins() {
+        Board board = new Board();
+        Game game = new Game(board);
+        board.mark(0, 'x');
+        board.mark(4, 'x');
+        assertFalse(game.hasWinner());
+        board.mark(8, 'x');
+        assertTrue(game.hasWinner());
+    }
+
+    @Test
+    public void knowsWhenARightDiagonalWins() {
+        Board board = new Board();
+        Game game = new Game(board);
+        board.mark(2, 'x');
+        board.mark(4, 'x');
+        assertFalse(game.hasWinner());
+        board.mark(6, 'x');
+        assertTrue(game.hasWinner());
+    }
 }

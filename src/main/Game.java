@@ -27,6 +27,8 @@ public class Game {
         List<List<Character>> combinations = new ArrayList<>();
         combinations.addAll(board.getRows());
         combinations.addAll(board.getColumns());
+        combinations.add(board.getLeftDiagonal());
+        combinations.add(board.getRightDiagonal());
         return combinations;
     }
 }
