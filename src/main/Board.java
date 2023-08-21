@@ -1,6 +1,7 @@
 package main;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import java.util.Optional;
 
@@ -49,6 +50,23 @@ public class Board {
         for (int i=0; i<3 ;i++) {
             diagonal.add(rows.get(i).get(i));
         }
+        return diagonal;
+    }
+
+    private void flipBoard(List<List<Character>> rows) {
+        for (int i = 0; i < 3; i++) {
+            Collections.reverse(rows.get(i));
+        }
+    }
+
+    public List<Character> getRightDiagonal() {
+        List<Character> diagonal = new ArrayList<>();
+        List<List<Character>> rows = getRows();
+        flipBoard(rows);
+        for (int i=0; i<3 ;i++) {
+            diagonal.add(rows.get(i).get(i));
+        }
+        flipBoard(rows);
         return diagonal;
     }
 }
