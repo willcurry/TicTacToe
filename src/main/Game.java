@@ -25,8 +25,9 @@ public class Game {
     }
 
     private boolean isAllMatching(List<Character> combination) {
+        Character firstMark = combination.get(0);
         return combination.stream()
-                .allMatch(mark -> mark == 'x');
+                .allMatch(mark -> mark == firstMark && firstMark != '-');
     }
 
     public List<List<Character>> getAllCombinations() {

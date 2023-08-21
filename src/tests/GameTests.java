@@ -57,12 +57,12 @@ public class GameTests {
     public void knowsWhoWinnerIs() {
         Board board = new Board();
         Game game = new Game(board);
-        board.mark(2, 'x');
-        board.mark(4, 'x');
-        board.mark(6, 'x');
+        board.mark(2, 'o');
+        board.mark(4, 'o');
+        board.mark(6, 'o');
         assertTrue(game.hasWinner());
         Optional<Character> winner = game.getWinner();
-        assertEquals(winner, Optional.of('x'));
+        assertEquals(winner, Optional.of('o'));
     }
 
     @Test
