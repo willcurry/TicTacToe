@@ -2,10 +2,9 @@ package tests;
 
 import main.Board;
 import main.Game;
-import org.junit.Before;
 import org.junit.Test;
 
-import java.util.Arrays;
+import java.util.Optional;
 
 import static junit.framework.TestCase.*;
 
@@ -52,5 +51,17 @@ public class GameTests {
         assertFalse(game.hasWinner());
         board.mark(6, 'x');
         assertTrue(game.hasWinner());
+    }
+
+    @Test
+    public void knowsWhoWinnerIs() {
+        Board board = new Board();
+        Game game = new Game(board);
+        board.mark(2, 'x');
+        board.mark(4, 'x');
+        board.mark(6, 'x');
+        assertTrue(game.hasWinner());
+        Optional<Character> winner = game.getWinner();
+        assertEquals(winner, Optional.of('x'));
     }
 }
