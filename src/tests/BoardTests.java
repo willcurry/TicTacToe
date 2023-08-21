@@ -42,4 +42,11 @@ public class BoardTests {
         assertEquals(Arrays.asList('-', '-', '-'), board.getColumns().get(1));
         assertEquals(Arrays.asList('x', '-', '-'), board.getColumns().get(2));
     }
+
+    @Test
+    public void getsLeftDiagonal() {
+        board = new Board();
+        board.mark(8, 'x');
+        assertEquals(Arrays.asList('-', '-', 'x'), board.getLeftDiagonal());
+    }
 }

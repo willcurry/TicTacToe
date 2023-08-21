@@ -42,4 +42,13 @@ public class Board {
         }
         return columns;
     }
+
+    public List<Character> getLeftDiagonal() {
+        List<Character> diagonal = new ArrayList<>();
+        List<List<Character>> rows = getRows();
+        for (int i=0; i<3 ;i++) {
+            diagonal.add(rows.get(i).get(i));
+        }
+        return diagonal;
+    }
 }
