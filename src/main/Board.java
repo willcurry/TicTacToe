@@ -31,4 +31,15 @@ public class Board {
         return rows;
     }
 
+    public List<List<Character>> getColumns() {
+        List<List<Character>> columns = new ArrayList<>();
+        for (int i=0; i<3 ;i++) {
+            List<Character> column = new ArrayList<>();
+            for (int j=i; j<9 ;j = j + 3) {
+                column.add(cells.get(j));
+            }
+            columns.add(column);
+        }
+        return columns;
+    }
 }

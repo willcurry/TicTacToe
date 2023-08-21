@@ -33,4 +33,13 @@ public class BoardTests {
         assertEquals(Arrays.asList('-', '-', '-'), board.getRows().get(1));
         assertEquals(Arrays.asList('-', '-', '-'), board.getRows().get(2));
     }
+
+    @Test
+    public void getsColumns() {
+        board = new Board();
+        board.mark(2, 'x');
+        assertEquals(Arrays.asList('-', '-', '-'), board.getColumns().get(0));
+        assertEquals(Arrays.asList('-', '-', '-'), board.getColumns().get(1));
+        assertEquals(Arrays.asList('x', '-', '-'), board.getColumns().get(2));
+    }
 }

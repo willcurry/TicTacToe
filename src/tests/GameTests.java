@@ -20,4 +20,15 @@ public class GameTests {
         board.mark(2, 'x');
         assertTrue(game.hasWinner());
     }
+
+    @Test
+    public void knowsWhenAColumnWins() {
+        Board board = new Board();
+        Game game = new Game(board);
+        board.mark(0, 'x');
+        board.mark(3, 'x');
+        assertFalse(game.hasWinner());
+        board.mark(6, 'x');
+        assertTrue(game.hasWinner());
+    }
 }
