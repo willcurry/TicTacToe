@@ -64,4 +64,15 @@ public class GameTests {
         Optional<Character> winner = game.getWinner();
         assertEquals(winner, Optional.of('x'));
     }
+
+    @Test
+    public void knowsWhenThereIsNoWinner() {
+        Board board = new Board();
+        Game game = new Game(board);
+        board.mark(2, 'x');
+        board.mark(4, 'x');
+        assertFalse(game.hasWinner());
+        Optional<Character> winner = game.getWinner();
+        assertEquals(winner, Optional.empty());
+    }
 }

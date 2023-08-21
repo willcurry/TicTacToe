@@ -6,11 +6,9 @@ import java.util.Optional;
 
 public class Game {
     private final Board board;
-    private final ArrayList<Character> cells;
 
     public Game(Board board) {
         this.board = board;
-        this.cells = board.getCells();
     }
 
     public boolean hasWinner() {
