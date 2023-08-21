@@ -14,4 +14,8 @@ public class Board {
     public ArrayList<Character> getCells() {
         return cells;
     }
+
+    public void mark(int position, Character player) {
+       cells.set(position, player);
+    }
 }
