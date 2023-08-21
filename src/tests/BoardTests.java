@@ -26,12 +26,11 @@ public class BoardTests {
     }
 
     @Test
-    public void knowsWhenARowWins() {
-        Board board = new Board();
-        board.mark(0, 'x');
-        board.mark(1, 'x');
-        assertFalse(board.hasWinner());
+    public void getsRows() {
+        board = new Board();
         board.mark(2, 'x');
-        assertTrue(board.hasWinner());
+        assertEquals(Arrays.asList('-', '-', 'x'), board.getRows().get(0));
+        assertEquals(Arrays.asList('-', '-', '-'), board.getRows().get(1));
+        assertEquals(Arrays.asList('-', '-', '-'), board.getRows().get(2));
     }
 }

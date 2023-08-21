@@ -21,24 +21,14 @@ public class Board {
        cells.set(position, player);
     }
 
-    public boolean hasWinner() {
-        return getRows().stream()
-                .filter(row -> isAllMatching(row))
-                .count() > 0;
-    }
-
-    private boolean isAllMatching(List<Character> row) {
-        return row.stream()
-                .allMatch(mark -> mark == 'x');
-    }
-
-    private List<List<Character>> getRows() {
+    public List<List<Character>> getRows() {
         List<List<Character>> rows = new ArrayList<>();
-        for (int i=0; i<3;i++) {
+        for (int i=0; i<3 ;i++) {
             int start = i * 3;
             int end = start + 3;
             rows.add(cells.subList(start, end));
         }
         return rows;
     }
+
 }
