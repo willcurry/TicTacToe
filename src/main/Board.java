@@ -53,12 +53,6 @@ public class Board {
         return diagonal;
     }
 
-    private void flipBoard(List<List<Character>> rows) {
-        for (int i = 0; i < 3; i++) {
-            Collections.reverse(rows.get(i));
-        }
-    }
-
     public List<Character> getRightDiagonal() {
         List<Character> diagonal = new ArrayList<>();
         List<List<Character>> rows = getRows();
@@ -68,5 +62,11 @@ public class Board {
         }
         flipBoard(rows);
         return diagonal;
+    }
+
+    private void flipBoard(List<List<Character>> rows) {
+        for (int i = 0; i < 3; i++) {
+            Collections.reverse(rows.get(i));
+        }
     }
 }
